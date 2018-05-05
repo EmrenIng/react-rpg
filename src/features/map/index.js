@@ -50,7 +50,6 @@ function Map(props) {
         >
         {
             props.tiles.map( row => <MapRow tiles={row} />)
-                // row.map( tile => <MapTile value={tile} />))
         }
         
         </div>

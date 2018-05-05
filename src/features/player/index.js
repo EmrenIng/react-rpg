@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import walkSprite from './playerWalk.png'
 import handleMovement from './movement'
-import handleInventory from './inventory'
+
 
 function Player(props) {
     return (
@@ -25,6 +25,6 @@ function mapStateToProps(state) {
         ...state.player, //Spread operator so item dont have to be individually typed. 
     }
 }
-handleInventory(Player)
+
 export default connect(mapStateToProps)(handleMovement(Player))// First is for the map. 2nd is for player. 
 

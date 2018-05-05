@@ -9,6 +9,8 @@ function World(props) {
         tiles: tiles,
     }})
 
+    
+
     return (
         <div 
             style={{
@@ -18,6 +20,7 @@ function World(props) {
                 margin: '20px auto',
             }}
             >
+
             <Map />
             <Player />
         </div>

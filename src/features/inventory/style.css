@@ -1,0 +1,7 @@
+.tile {
+    display: inline-flex;
+}
+
+.wood {
+    background-color: red;
+}

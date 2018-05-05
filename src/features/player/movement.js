@@ -104,5 +104,7 @@ export default function handleMovement(player) {
         handleKeyDown(e)
     })
 
+    
+
     return player
 }
