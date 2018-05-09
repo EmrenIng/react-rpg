@@ -1,15 +1,17 @@
 import React from 'react'
 import Map from '../map'
 import Player from "../player"
+import Inventory from '../inventory'
 import { tiles } from '../../data/map/1'
+import { tilesInv } from '../../data/map/2'
 import store from '../../config/store'
 
 function World(props) {
-    store.dispatch({ type: 'ADD_TILES', payload: {
-        tiles: tiles,
-    }})
-
-    
+    store.dispatch({ type: 'ADD_TILES', 
+        payload: {
+            tiles: tiles,
+        }
+})
 
     return (
         <div 
@@ -20,9 +22,8 @@ function World(props) {
                 margin: '20px auto',
             }}
             >
-
             <Map />
-            <Player />
+            <Player tilesInv={tilesInv} />
         </div>
     )
 }

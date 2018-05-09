@@ -1,12 +1,14 @@
-
 const initinalState = {
-    tiles: [],
-
+    tilesInv: []
 }
 
 const invReducer = (state=initinalState, action) => {
     switch(action.type) {
-        case 'ADD_TILES':
+        case 'ADD_TILESINV':
+            return {
+                ...action.payload
+            }
+        case 'ADD_ITEM':
             return {
                 ...action.payload
             }
@@ -14,5 +16,4 @@ const invReducer = (state=initinalState, action) => {
             return state
     }
 }
-
 export default invReducer 

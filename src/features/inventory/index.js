@@ -5,45 +5,67 @@ import { SPRITE_SIZE } from '../../config/constants'
 import { currentInv } from './inventory'
 import './style.css'
 
-// function getTileSprite(type) {
-//     switch(type) {
-//         case 'chest':
-//             return console.log("test")
-//     }
-// }
+function getInvSprite(type) {
+    switch(type) {
+        case 0:
+            return 'wood'
+        case 5:
+            return 'cheese'
+        case 6:
+            return 'stick'
+        case 7:
+            return 'strawberry'
+    }
+}
 
-// function grabItem() {
-//     function handleKeyDown (e) {
-//         e.preventDefault()
-//         if (e.keyCode == 73){
-//                 return console.log({currentInv})
-//         }
-//     }
-// }
+
+function InvTile(props) {
+    return <div className={`invTile ${getInvSprite(props.tile)}`}
+        style={{
+            height: SPRITE_SIZE,
+            width: SPRITE_SIZE,
+        }}
+    
+    >
+    </div>
+}
+
+function InvRow(props) {
+    return <div className='row'>
+    {
+        props.tilesInv.map( tile => <InvTile tile={tile} />)
+    }
+    </div>
+}
+
+
 
 
 function Inventory(props) {
     return (
         <div 
+            id='hideDiv'
             style= {{
                 position: 'absolute',
-                width: '384px',
+                width: '320px',
                 height: '192px',
                 backgroundColor: 'brown',
                 border: '4px soild white',
+                display: 'none',
             }}
-        > 
-        { currentInv }
+        > {
+            props.tilesInv.map( row => <InvRow tilesInv={row} />)
+        }
         </div>
     )
 }
 
 function mapStateToProps(state) {
     return {
-        ...state.inventory, //Spread operator so item dont have to be individually typed. 
+        // tilesInv: state.map.tilesInv
+        // ...state.inventory, //Spread operator so item dont have to be individually typed. 
     }
 }
 
 export default connect(mapStateToProps)(handleInventory(Inventory))// First is for the map. 2nd is for player. 
 
-// export default connect(inventoryStateToProps)(Inventory)

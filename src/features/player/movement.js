@@ -1,4 +1,6 @@
 import store from '../../config/store'
+import { tilesInv } from '../../data/map/2'
+import { item } from '../inventory/inventory'
 import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT } from '../../config/constants'
 
 export default function handleMovement(player) {
@@ -44,11 +46,26 @@ export default function handleMovement(player) {
         const tiles = store.getState().map.tiles
         const y = newPos[1] / SPRITE_SIZE
         const x = newPos[0] / SPRITE_SIZE
-        const nextTile = tiles[y][x]
-        return  nextTile < 5 
+        const nextTile = tiles.tiles[y][x]
+        item(nextTile) 
+        return  nextTile < 7 
             console.log(x, y)
         
     }
+
+    // function item(nextTile) {
+    //     if (nextTile === 4) {
+    //     alert("Item Aquired")// Make it its own function.
+    //     const newArr = Object.assign([...tilesInv], {0: [0, 5, 5, 0, 0]})
+    //     console.log(Object.assign([...tilesInv], {0: [0, 5, 5, 0, 0]}))
+    //     store.dispatch({
+    //         type: 'ADD_ITEM',
+    //         payload: {
+    //             InvArray: newArr,
+    //         }
+    //     })
+    //     }
+    // }
 
     function directionMove(newPos, direction) {
         const walkIndex = getWalkIndex()
@@ -66,8 +83,8 @@ export default function handleMovement(player) {
     function attemptMove(direction) {
         const oldPos = store.getState().player.position
         const newPos = getNewPosition(oldPos, direction)
-
-        if(observeBoundaries(oldPos, newPos) && observeBlocks(oldPos, newPos))
+        
+        if (observeBoundaries(oldPos, newPos) && observeBlocks(oldPos, newPos))
             directionMove(newPos, direction)
         
     }

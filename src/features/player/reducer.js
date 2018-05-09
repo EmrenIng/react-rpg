@@ -7,6 +7,8 @@ const initinalState = {
 
 }
 
+
+
 const playerReducer = (state=initinalState, action) => {
     switch(action.type) {
         case 'MOVE_PLAYER':

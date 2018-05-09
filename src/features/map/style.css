@@ -3,7 +3,16 @@
 }
 
 .grass {
-    background-color: blue;
+    background-color: #474d20;
+}
+.grass1 {
+    background-image: url('/tiles/grass1.png');
+}
+.grass2 {
+    background-image: url('/tiles/grass2.png');
+}
+.grass3 {
+    background-image: url('/tiles/grass3.png');
 }
 .chest {
     background-image: url('/tiles/chest.png');
@@ -11,6 +20,15 @@
 .rock {
     background-image: url('/tiles/rock.png');
 }
-.tree {
-    background-image: url('/tiles/tree.png');
+.bush {
+    background-image: url('/tiles/bush1.png');
+}
+.bush1 {
+    background-image: url('/tiles/bush2.png');
+}
+.bush2 {
+    background-image: url('/tiles/bush3.png');
+}
+.shroom {
+        background-image: url('/tiles/mushroom.png');
 }

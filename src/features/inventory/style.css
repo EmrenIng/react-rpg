@@ -1,7 +1,16 @@
-.tile {
+.invTile {
     display: inline-flex;
 }
 
 .wood {
-    background-color: red;
+    background-color: brown;
+}
+.cheese {
+    background-image: url('/tiles/cheese.png');
+}
+.stick {
+    background-image: url('/tiles/stick.png');
+}
+.strawberry {
+    background-image: url('/tiles/strawberry.png');
 }
