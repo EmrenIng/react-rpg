@@ -53,20 +53,6 @@ export default function handleMovement(player) {
         
     }
 
-    // function item(nextTile) {
-    //     if (nextTile === 4) {
-    //     alert("Item Aquired")// Make it its own function.
-    //     const newArr = Object.assign([...tilesInv], {0: [0, 5, 5, 0, 0]})
-    //     console.log(Object.assign([...tilesInv], {0: [0, 5, 5, 0, 0]}))
-    //     store.dispatch({
-    //         type: 'ADD_ITEM',
-    //         payload: {
-    //             InvArray: newArr,
-    //         }
-    //     })
-    //     }
-    // }
-
     function directionMove(newPos, direction) {
         const walkIndex = getWalkIndex()
         store.dispatch({

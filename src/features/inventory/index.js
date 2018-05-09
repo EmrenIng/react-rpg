@@ -62,10 +62,9 @@ function Inventory(props) {
 
 function mapStateToProps(state) {
     return {
-        // tilesInv: state.map.tilesInv
-        // ...state.inventory, //Spread operator so item dont have to be individually typed. 
+        ...state.inventory, //Spread operator so item dont have to be individually typed. 
     }
 }
 
-export default connect(mapStateToProps)(handleInventory(Inventory))// First is for the map. 2nd is for player. 
+export default connect(mapStateToProps)(handleInventory(Inventory))// First is for the MapStateToProps/ 2nd is for the MapDispatchToProps
 
