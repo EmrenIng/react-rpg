@@ -1,9 +1,12 @@
 # React RPG
 A simple rpg game in which the player can walk around on a map and interact with a chest. 
 
-## Getting Started
+## Install
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Fork or Clone the repo and do a 
+```
+yarn install
+```
 
 ## Built With
 
