@@ -16,3 +16,4 @@ export const tiles = {
 }
 
 // 0 = Grass or Walkable. Other # will be other items.
+// This is the Map Matrix for our first map. 

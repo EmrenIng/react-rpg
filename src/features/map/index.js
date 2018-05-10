@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import { SPRITE_SIZE } from '../../config/constants'
 import './style.css'
 
-// Create an Id, map id to tiles. Use id. 
-
+//This function allow for the tiles to have sprites. 
+// It asigns each tile its own string depending upon the # which is a reference to a # in the Matrix.
 function getTileSprite(type) {
     switch(type) {
         case 0:
@@ -31,7 +31,7 @@ function getTileSprite(type) {
             return 'shroom'
     }
 }
-
+// This sets the hightxWidth of the tiles and gives the tiles the class of the corresponding string above. 
 function MapTile(props) {
     return <div 
         className={`tile ${getTileSprite(props.tile)}`}
@@ -41,12 +41,10 @@ function MapTile(props) {
             width: SPRITE_SIZE,
         }}
         >
-        
-
         </div>
                 
 }
-
+// Puts our tiles within a Row Div.
 function MapRow(props) {
     return <div className="row">
     {
@@ -56,8 +54,6 @@ function MapRow(props) {
     </div>
     
 }
-
-
 
 function Map(props) {
     return (
@@ -83,4 +79,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(Map)
+export default connect(mapStateToProps)(Map) // Because the Map doesnt change after its first Mapped we dont need the MapDispatchToProps.

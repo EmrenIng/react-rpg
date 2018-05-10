@@ -23,6 +23,8 @@ export const item = function item(nextTile) {
 
 export default function handleInventory(inventory)  {
 
+// The event Listener and Switch operation listen for if the user has pressed 'I' and 
+// allow for the hideInv to be toggled based on that button press. 
     window.addEventListener('keydown', (e) => {
         handleKeyDown(e)
     })
@@ -31,13 +33,10 @@ export default function handleInventory(inventory)  {
         e.preventDefault()
         switch(e.keyCode) {
             case 73:
-                // currentInv.push('fish')
                 hideInv();
-                // console.log(currentInv)
-                //refresh Function. - for state change. 
                 return 
         }
-
+// Function to hide the inventory based on if the css display is set to block or none. 
         function hideInv() {
             var x = document.getElementById("hideDiv");
             if (x.style.display === "none") {

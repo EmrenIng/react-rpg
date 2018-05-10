@@ -5,6 +5,8 @@ import { SPRITE_SIZE } from '../../config/constants'
 // import { currentInv } from './inventory'
 import './style.css'
 
+//This function allow for the tiles to have sprites. 
+// It asigns each tile its own string depending upon the # which is a reference to a # in the Matrix.
 function getInvSprite(type) {
     switch(type) {
         case 0:
@@ -18,7 +20,7 @@ function getInvSprite(type) {
     }
 }
 
-
+// This sets the hightxWidth of the tiles and gives the tiles the class of the corresponding string above. 
 function InvTile(props) {
     return <div className={`invTile ${getInvSprite(props.tile)}`}
         style={{
@@ -29,7 +31,7 @@ function InvTile(props) {
     >
     </div>
 }
-
+// Puts our tiles within a Row Div.
 function InvRow(props) {
     return <div className='row'>
     {
@@ -49,7 +51,7 @@ function Inventory(props) {
                 position: 'absolute',
                 width: '320px',
                 height: '192px',
-                backgroundColor: 'brown',
+                backgroundColor: '#381a1a',
                 border: '4px soild white',
                 display: 'none',
             }}

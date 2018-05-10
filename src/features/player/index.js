@@ -26,5 +26,5 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(handleMovement(Player))// First is for the map. 2nd is for player. 
+export default connect(mapStateToProps)(handleMovement(Player))// First is for the mapStateToProps the 2nd is MapDispatchToProps 
 

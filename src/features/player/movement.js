@@ -4,7 +4,7 @@ import { item } from '../inventory/inventory'
 import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT } from '../../config/constants'
 
 export default function handleMovement(player) {
-
+// This creates movement based on the string, which is refrenced lower down as a keystroke.
     function getNewPosition(oldPos, direction) {
         switch(direction) {
             case 'WEST': // x,y 
@@ -17,7 +17,7 @@ export default function handleMovement(player) {
                 return [ oldPos[0], oldPos[1]+SPRITE_SIZE ]
         } 
     }
-
+// Used to map the Sprite and Direction. 
     function getSpriteLocation(direction, walkIndex) {
         switch(direction) {
             case 'WEST':
@@ -30,18 +30,19 @@ export default function handleMovement(player) {
                 return `${SPRITE_SIZE*walkIndex}px ${SPRITE_SIZE*2}px` 
         }
     }
-
+// This indexs the sprite sheet so that they can be grabbed. 
     function getWalkIndex() {
         const walkIndex = store.getState().player.walkIndex
         return walkIndex >= 8 ? 0 : walkIndex + 1
     }
-
+// Creates the boundries on the outside of the map. 
+// The sprite size is removed so the sprite can not move of by one 64x64 pace.
     function observeBoundaries(oldPos, newPos) {
         return (newPos[0] >= 0 && newPos[0] <= MAP_WIDTH - SPRITE_SIZE) &&
                (newPos[1] >= 0 && newPos[1] <= MAP_HEIGHT - SPRITE_SIZE)
             
     }
-
+// If a Tile is under 7 in the Matrix map it will not be passible. 
     function observeBlocks(oldPos, newPos) {
         const tiles = store.getState().map.tiles
         const y = newPos[1] / SPRITE_SIZE
@@ -52,21 +53,8 @@ export default function handleMovement(player) {
             console.log(x, y)
         
     }
-
-    // function item(nextTile) {
-    //     if (nextTile === 4) {
-    //     alert("Item Aquired")// Make it its own function.
-    //     const newArr = Object.assign([...tilesInv], {0: [0, 5, 5, 0, 0]})
-    //     console.log(Object.assign([...tilesInv], {0: [0, 5, 5, 0, 0]}))
-    //     store.dispatch({
-    //         type: 'ADD_ITEM',
-    //         payload: {
-    //             InvArray: newArr,
-    //         }
-    //     })
-    //     }
-    // }
-
+// This is a store dispatch for Redux that helps gather all these variables to move the player. 
+// This is an Action that is sent to the Reducer which in turn is sent to the store. 
     function directionMove(newPos, direction) {
         const walkIndex = getWalkIndex()
         store.dispatch({
@@ -79,7 +67,7 @@ export default function handleMovement(player) {
             }
         })
     }
-
+// Gets the oldPosition and creates a New one. Makes sure that the next tile is terain that can be moved over. 
     function attemptMove(direction) {
         const oldPos = store.getState().player.position
         const newPos = getNewPosition(oldPos, direction)
@@ -88,7 +76,7 @@ export default function handleMovement(player) {
             directionMove(newPos, direction)
         
     }
-
+// This switch listens to the keys pressed and then sets the direction based off it. 
     function handleKeyDown (e) {
         e.preventDefault()
 
@@ -120,8 +108,6 @@ export default function handleMovement(player) {
     window.addEventListener('keydown', (e) => {
         handleKeyDown(e)
     })
-
-    
 
     return player
 }
