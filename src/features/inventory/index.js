@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import handleInventory from './inventory'
 import { SPRITE_SIZE } from '../../config/constants'
-import { currentInv } from './inventory'
+// import { currentInv } from './inventory'
 import './style.css'
 
 function getInvSprite(type) {
@@ -13,8 +13,8 @@ function getInvSprite(type) {
             return 'cheese'
         case 6:
             return 'stick'
-        case 7:
-            return 'strawberry'
+        case 2:
+            return 'straw'
     }
 }
 
@@ -62,10 +62,9 @@ function Inventory(props) {
 
 function mapStateToProps(state) {
     return {
-        // tilesInv: state.map.tilesInv
-        // ...state.inventory, //Spread operator so item dont have to be individually typed. 
+        ...state.inventory, //Spread operator so items dont have to be individually typed. 
     }
 }
 
-export default connect(mapStateToProps)(handleInventory(Inventory))// First is for the map. 2nd is for player. 
+export default connect(mapStateToProps)(handleInventory(Inventory))// First is for the mapStateToProps the 2nd is MapDispatchToProps 
 

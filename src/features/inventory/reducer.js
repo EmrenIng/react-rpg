@@ -1,5 +1,8 @@
 const initinalState = {
-    tilesInv: []
+    tilesInv: [
+    [0,6,5,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],]
 }
 
 const invReducer = (state=initinalState, action) => {

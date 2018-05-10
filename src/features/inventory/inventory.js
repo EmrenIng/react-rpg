@@ -5,17 +5,17 @@ import './style.css'
 import { nextTile } from '../player/movement.js'
 import { tilesInv } from '../../data/map/2'
 
-export let currentInv = ['stick','rope']
+// export let currentInv = ['stick','rope']
 
 export const item = function item(nextTile) {
     if (nextTile === 5) {
     alert("Item Aquired")
-    const newArr = Object.assign([...tilesInv], {0: [0, 5, 5, 0, 0]})
+    const newArr = Object.assign([...tilesInv], {0: [0, 5, 6, 2, 0]})
     console.log(Object.assign([...tilesInv], {0: [0, 5, 5, 0, 0]}))
     store.dispatch({
         type: 'ADD_ITEM',
         payload: {
-            InvArray: newArr,
+            tilesInv: newArr,
         }
     })
     }
@@ -33,20 +33,10 @@ export default function handleInventory(inventory)  {
             case 73:
                 // currentInv.push('fish')
                 hideInv();
-                console.log(currentInv)
+                // console.log(currentInv)
                 //refresh Function. - for state change. 
                 return 
         }
-
-        
-    // function addItem( , ) { //old array, new array? 
-    //     store.dispatch({
-    //         type: 'ADD_ITEM',
-    //         payload: {
-               
-    //         }
-    //     })
-    // }
 
         function hideInv() {
             var x = document.getElementById("hideDiv");

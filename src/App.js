@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+// import store from './config/store'
 import World from './features/world'
 import Inventory from './features/inventory'
 import { tilesInv } from './data/map/2'
