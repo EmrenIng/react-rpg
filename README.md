@@ -1,5 +1,7 @@
 # React RPG
-A simple rpg game in which the player can walk around on a map and interact with a chest. 
+React Rpg is an intro into what video game creation might be like. I set out to make something reminiscent of older rpgs working with a 2D world and a single player character to navigate that world. I picked React due to its relevance in the coding world and Redux was brought in to supplement this choice. 
+
+Currently the user interaction with the world is a single chest 'hidden' amongst some bushed. Once the player reaches the chest they recive an alert and a stawberry is added to the player inventory for their efforts. 
 
 ## Install
 
