@@ -11,11 +11,9 @@ These instructions will get you a copy of the project up and running on your loc
 * [Redux](https://redux.js.org/) - Library
 * [React-Redux](https://github.com/reactjs/react-redux) - React bindings for Redux
 
- ## Authors
+ ## Art
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+All the artwork is done by Emren Ingvoldstad. 
 
 ## Acknowledgments
 * [The Danger Crew: React Rpg](https://youtu.be/0pfLapmfxdY) - Initial inspiration, it let me know that this was doable. 
